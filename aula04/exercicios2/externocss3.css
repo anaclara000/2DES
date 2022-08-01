@@ -1,0 +1,57 @@
+body {
+	background-image: url('img/IDIOMAS.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.titulo{
+	background-color: rgb(243, 132, 151);
+	color: rgb(255, 255, 255);
+    font-family: Verdana;
+	text-align: center;
+	font-size: 50px;
+	padding: 8px;
+}
+input[type=password], input[type=text], input[type=date] , input[type=number] , #idioma{
+  width: 100%;
+  padding: 8px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+
+#quadrado {
+  border-radius: 5px;
+  background-color: rgba(255, 192, 203, 0.9);
+  color: #fff;
+  padding: 18px;
+  width: 500px;
+  height: 760px;
+  position: absolute;
+  top: 15%;
+  left: 36%;
+}
+.login{
+	text-align: center;
+	font-weight: bold;
+    font-family: Verdana;
+    font-size: 25px;
+
+}	
+.name{
+	color: black;
+	font-family: Calibri;
+}
+
+input[type=submit],input[type=reset] {
+ background-color: rgb(245, 130, 188);
+ border: none;
+ padding: 8px;
+ margin-top: 5px;
+ color: #fff;
+ }
