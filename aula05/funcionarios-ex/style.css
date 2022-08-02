@@ -1,0 +1,57 @@
+body {
+	/* background-image: url('img/fundo.png'); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.titulo{
+	background-color: white;
+	color: black;
+	text-align: center;
+	font-family: Papyrus;
+	font-size: 50px;
+	padding: 8px;
+}
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+#mae{
+    display: flex;
+}
+
+#quadrado {
+  border-radius: 5px;
+  background-color: rgb(240, 124, 58);
+  padding: 18px;
+  width: 500px;
+  height: 350px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.login{
+	text-align: center;
+	font-family: Papyrus;
+	font-weight: bold;
+    color: white;
+}	
+.name{
+	color: white;
+	font-family: Calibri;
+}
+
+input[type=submit] {
+ background-color: orange;
+ border: none;
+ padding: 8px;
+ margin-top: 5px;
+ }
