@@ -2,6 +2,7 @@
 var meuInputPlaca= document.getElementById("placaVei");
 var busca = document.querySelector("#buscaP");
 
+placaRes.disabled=true;
 var resultado = document.querySelector("#placaRes")
 busca.addEventListener("click", validarPlaca);
 //meuInputPlaca.addEventListener("keyup", validarPlaca);
@@ -27,50 +28,59 @@ function validarPlaca(){
        resultado.value = resposta;
    }
 
-   var meuinputCpf = document.querySelector("#veriCpf")
+   var meuinputCpf = document.getElementById("veriCpf")
    //meuinputCpf.addEventListener("keyup", VerificarCPF);
 
+  cpfRes.disabled=true;
    var buscaCpf = document.querySelector("#buscaCpf");
    buscaCpf.addEventListener("click", VerificarCPF);
 
    var resultado2 = document.querySelector("#cpfRes")
 
    function VerificarCPF() {
-    var soma;
-    var resto;
+        var soma;
+        var resto;
+        var resposta1 = `Cpf inválido`;
+        var resposta2 = `Cpf válido`;
+        soma = 0;
 
-    var resposta1 = `Cpf inválido`;
-    var resposta2 = `Cpf válido`;
-
-    soma = 0;
-    if (meuinputCpf.value == "00000000000") {
-        return resposta1;
-
-    }for (i = 1; i <= 9; i++) {
-        soma = soma + parseInt(meuinputCpf.value.substring(i - 1, i)) * (11 - i);
-    }
-    resto = soma % 11;
-    if (resto == 10 || resto == 11 || resto < 2) {
-        resto = 0;
-    } else {
-        resto = 11 - resto;
-    } if (resto != parseInt(meuinputCpf.value.substring(9, 10))) {
-        return resposta1;
-    }
-    soma = 0;
-    for (i = 1; i <= 10; i++) {
-        soma = soma + parseInt(meuinputCpf.value.substring(i - 1, i)) * (12 - i);
-    }
-    resto = soma % 11;
-    if (resto == 10 || resto == 11 || resto < 2) {
-        resto = 0;
-    } else {
-        resto = 11 - resto;
-    }if (resto != parseInt(meuinputCpf.value.substring(10, 11))) {
-        return resposta1;
-    
-    }
-
+        if(meuinputCpf.value.length != 11){
+            resultado2.style.color =`red`;
+            resultado2.value = resposta1
+            return
+        }
+        if (meuinputCpf.value.toString() === "00000000000") {
+            resultado2.style.color =`red`;
+            resultado2.value = resposta1
+            return
+        }for (i = 1; i <= 9; i++) {
+            soma = soma + parseInt(meuinputCpf.value.substring(i - 1, i)) * (11 - i);
+        }
+        resto = soma % 11;
+        if (resto == 10 || resto == 11 || resto < 2) {
+            resto = 0;
+        } else {
+            resto = 11 - resto;
+        } if (resto != parseInt(meuinputCpf.value.substring(9, 10))) {
+            resultado2.style.color =`red`;
+            resultado2.value = resposta1
+            return
+        }
+        soma = 0;
+        for (i = 1; i <= 10; i++) {
+            soma = soma + parseInt(meuinputCpf.value.substring(i - 1, i)) * (12 - i);
+        }
+        resto = soma % 11;
+        if (resto == 10 || resto == 11 || resto < 2) {
+            resto = 0;
+        } else {
+            resto = 11 - resto;
+        }if (resto != parseInt(meuinputCpf.value.substring(10, 11))) {
+            resultado2.style.color =`red`;
+            resultado2.value = resposta1
+            return
+        }
+        resultado2.style.color =`green`;
         resultado2.value = resposta2;
     }
 
