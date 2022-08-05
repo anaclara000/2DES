@@ -45,7 +45,7 @@ input[type=password], input[type=text], input[type=date] , textarea {
 	font-family: Calibri;
 }
 
-input[type=submit],input[type=reset] {
+button[type=submit],input[type=reset] {
  background-color: lightblue;
  border: none;
  padding: 8px;

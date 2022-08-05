@@ -12,34 +12,40 @@
 		
 		<div id="quadrado">
 			<h1 class="login">Insira as seguintes informações </h1>
-				<form>
+				<form action="http://localhost:3000/pedidos">
 					<label class="name">Identidade</label>
-					<input type="text"  placeholder="Insira o Id..">
+					<input type="text"  name="id" placeholder="Insira o Id..">
 					
-					<label class="name">Nome</label>
-					<input type="text"  placeholder="Seu nome..">
+					<!-- <label class="name">Nome</label>
+					<input type="text" name="nome" placeholder="Seu nome..">
 					
 					<label class="name">Endereço</label>
-					<input type="text" placeholder="Rua São João">
+					<input type="text" name="endereco" placeholder="Rua São João"> -->
 					
 					<label class="name">Telefone</label>
-					<input type="text"  placeholder="(ddd)xxxxx-xxxx">
+					<input type="text"  name="telefone" placeholder="(ddd)xxxxx-xxxx">
+
+					<h1>Descubra seu id</h1>
+					<label class="name">Digite seu nome</label>
+					<input type="text"  name="idNome" placeholder="Seu nome...">
+					<textarea id="resultadoId" cols="30" rows="2"></textarea>
+
+					<button class="buscaId">Enviar</button>
 					
-					<label class="name">Número do pedido</label>
-					<input type="text" placeholder="">
+					<!-- <label class="name">Número do pedido</label>
+					<input type="text" name="numPedido" placeholder="">
 
 					<label class="name">Data do pedido</label>
-					<input type="date"  placeholder="">
+					<input type="date" name="dataPedido" placeholder="">
 
 					<label class="name">Valor do pedido</label>
-					<input type="text" placeholder="">
+					<input type="text" name="valor" placeholder="">
 					
 					<label class="name">Descrição</label>
-					<textarea style="resize: none" id="descricão" cols="30" rows="5"></textarea>
+					<textarea name="descricao" style="resize: none" id="descricão" cols="30" rows="5"></textarea> -->
 					
 					<input type="checkbox" class="name">Li e concordo com as políticas de privacidade<br>
-					<input type="submit" value="Enviar">
-					<input type="reset">
+					<button type="submit">Enviar</button>
 					
 					
 				</form>
