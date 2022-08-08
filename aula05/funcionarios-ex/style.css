@@ -31,7 +31,7 @@ input[type=text]{
   box-sizing: border-box;
   }
 
-#mae{
+#container{
     display: flex;
 }
 

@@ -1,13 +1,24 @@
-var meusinput = document.querySelector("#infos")
-    meusinput.addEventListener("keyup", addInformacao,);
+var nome = document.getElementById("nome")
+var cargo = document.getElementById("cargo")
+var salario = document.getElementById("salario")
 
-var enviar = document.querySelector("#botao")
-enviar.addEventListener("click", addInformacao);
+var tbody = document.querySelector("#table-body")
 
-function addInformacao(){
+function addFuncionario(){
+    let tr = document.createElement("tr")
 
-    if( meusinput.value != null){
-        let teste = document.createElement("form");
-        teste.className
-    }
+    let nomeValue = document.createElement("td")
+    nomeValue.innerHTML = nome.value 
+    
+    let cargoValue = document.createElement("td")
+    cargoValue.innerHTML = cargo.value
+
+    let salarioValue = document.createElement("td")
+    salarioValue.innerHTML = salario.value
+
+    tr.appendChild(nomeValue)
+    tr.appendChild(cargoValue)
+    tr.appendChild(salarioValue)
+
+    tbody.appendChild(tr);
 }

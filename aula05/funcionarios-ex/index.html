@@ -11,20 +11,20 @@
 	<body>
 		<h1 class="titulo">Registro de Funcionarios</h1>
     <hr>
-        <div id="mae">
+        <div id="container">
             <div id="quadrado">
                 <h1 class="login">Insira as seguintes informações </h1>
                     <form>
                         <label class="name">Nome</label>
-                        <input type="text"  id="infos" placeholder="Seu nome..">
+                        <input type="text"  id="nome" placeholder="Seu nome..">
                         
                         <label class="name">Cargo</label>
-                        <input type="text"   id="infos" placeholder="Digite o cargo..">
+                        <input type="text"  id="cargo" placeholder="Digite o cargo..">
                         
                         <label class="name">Salário</label>
-                        <input type="text"  id="infos" placeholder="insira o salário..">
+                        <input type="text"  id="salario" placeholder="insira o salário..">
                         
-                        <button id="botao">Enviar</button>
+                        <button id="botao" onclick=addFuncionario()>Enviar</button>
                     </form>
             </div>
             <table>
@@ -33,11 +33,11 @@
                     <th>Cargo</th>
                     <th>Salário</th>
                 </thead>
-                <tbody>
+                <tbody id="table-body">
                     <tr>
-                        <td>a</td>
-                        <td>a</td>
-                        <td>a</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
