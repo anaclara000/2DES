@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body onLoad="carregar()">
     <div class="menu">
         <div class="item-menu modelo">
-            <img src="" alt="" id="img-item">
-           <p id="nome-funcionario"></p>
-           <p id="nome-cargo"></p>
-           <input type="number" id="nivel">
-           <label for="" id="autorizado"></label>
+            <!-- <div class="container"> -->
+                <img src="" alt="" id="img-item">
+                <p id="nome-funcionario"></p>
+                <p id="nome-cargo"></p>
+                <!-- <input type="number" id="nivel"></br> -->
+                <p id="nivel"></p>
+                <label for="" id="autorizado"></label></br>
+                <button id="botao" onClick="removerItem(this)">Delete</button>
+            <!-- </div> -->
         </div>
     </div>
     

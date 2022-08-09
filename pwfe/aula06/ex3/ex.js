@@ -4,50 +4,56 @@
 
 var menu = [
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Sancho Cedraz",
 		"cargo":{
 			"nome":"Analista",
-			"nível":2
+			"nivel":2
 		},
 		"autorizado":true
 	},		
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Ionara Pederneiras",
 		"cargo":{
 			"nome":"Técnico",
-			"nível":2
+			"nivel":2
 		},
 		"autorizado":true
 	},
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Filipe Castanho",
 		"cargo":{
 			"nome":"Desenvolvedor",
-			"nível":1
+			"nivel":1
 		},
 		"autorizado":false
 	},
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Lívia Bicalho",
 		"cargo":{
 			"nome":"Analista",
-			"nível":3
+			"nivel":3
 		},
 		"autorizado":true
 	},
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Mauro Varanda",
 		"cargo":{
 			"nome":"Desenvolvedor",
-			"nível":3
+			"nivel":3
 		},
 		"autorizado":false
 	},	
 	{
+		"img":"img/usuario.png",
 		"funcionario":"Sandro Rosário",
 		"cargo":{
 			"nome":"Técnico",
-			"nível":3
+			"nivel":3
 		},
 		"autorizado":true
 	}
@@ -61,6 +67,28 @@ function carregar(){
 
 		novoItem.classList.remove("modelo")
 
-			novoItem.querySelector("#funcionario")
-	})
+			novoItem.querySelector("#img-item").src= item.img;
+			novoItem.querySelector("#nome-funcionario").innerHTML= item.funcionario;
+			novoItem.querySelector("#nome-cargo").innerHTML= item.cargo.nome;
+			novoItem.querySelector("#nivel").innerHTML=item.cargo.nivel;
+			
+			if(item.autorizado){
+				novoItem.querySelector("#autorizado").innerHTML= "Autorizado";
+				novoItem.querySelector("#autorizado").style.color = "green";
+			}else{
+				novoItem.querySelector("#autorizado").innerHTML= "Não autorizado";
+				novoItem.querySelector("#autorizado").style.color = "red";
+			}
+
+			if(item.cargo.nivel >= 3){
+				novoItem.querySelector("#botao").disabled = true;
+
+			}
+
+			document.querySelector(".menu").appendChild(novoItem);
+	});
+}
+
+function removerItem(e){
+    e.parentNode.remove();
 }
