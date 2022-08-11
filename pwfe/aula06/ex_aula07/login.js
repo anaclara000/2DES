@@ -1,36 +1,27 @@
-var backend = [
-    
+var users = [
     {
-		"usuarios":"ADM",
-		"passwords":{
-			"senha":"adm123",
-		},
-    },
-
-    {
-		"usuarios":"ana",
-		"passwords":{
-			"senha":"ana123",
-		},
+      "usuario": "admin",
+      "senha": "admin"
     },
 ]
-
-var Usuario = document.querySelector("#username");
-var Senha = document.querySelector("#password");
-var Result = document.querySelector("#resposta");
-
-function validarLogin(){
-	backend.forEach(user =>{
-			if(user.usuarios == Usuario.value && user.passwords.senha == Senha.value ){
-				console.log("oi")
-				window.location.href = "index.html"
-
-			} else{	
-				Login.querySelector("#resposta").innerHTML= "Usuário ou Senha inválidos";
-				Login.querySelector("#resposta").style.color = "red";
-			}
-
-
-	});
+var achou = false
+function logar() {
+  users.forEach(item => {
     
+    var user = document.querySelector("#username").value
+    var senha = document.querySelector("#password").value
+
+    let valUser = item.usuario
+    let valSenha = item.senha
+
+    if(user == valUser && senha == valSenha) {
+      window.location.href = "index.html"
+      achou = true
+       
+    }
+    
+  }) 
+  if(achou == false) {
+    var text = document.querySelector("#resposta").innerHTML = "Senha ou usuário inválido";
+  }
 }

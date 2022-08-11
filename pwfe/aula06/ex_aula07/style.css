@@ -85,9 +85,9 @@
 /* CARROSSEL */
 
 .d-block{
-    width: 200vh;
+    width: 192vh;
     height: 500px;
-    margin-left: 12px;;
+    margin-left: 18px;;
 }
 
 
@@ -176,11 +176,11 @@
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.1); 
     transition: 0s;
-    border: 1px solid #8a0608;
+    border: 1px solid #550305;
 }
 
 #vermelho{
-    background-color: #D22426;
+    background-color: #d8494b;
 }
 
 #laranja:hover{
