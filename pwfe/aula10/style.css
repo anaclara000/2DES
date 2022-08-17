@@ -35,11 +35,11 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 65%;
+    top: 67.8%;
 }
 
 .ddd{
-    width: 40px;
+    width: 50px;
     position: absolute;
     top: 100%;
     text-align: center;
@@ -56,6 +56,26 @@
     margin-left: 20px;
 }
 
+.lbCEP{
+ background-color: #edffd7;
+}
+
+.titulo > img{
+    width: 35vw;
+    height: 20vh;
+    margin-top: 2%;
+    
+}
+
+p{
+    background-color: #fff;
+    width: 150px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    right: 74%;
+}
 body{
     background-color: #E7F2C6;
 }
@@ -71,17 +91,12 @@ p{
     font-size: 20px;
 }
 
-h1{
-    font-family: "Noto Sans";
-    margin-top: 8%;
-    margin-left: 15%;
-    font-size: 50px;
-}
-
 h2{
     font-family: "Noto Sans";
     margin-left: 40%;
     padding-top: 1%;
+    font-size: 35px;
+    color: #054802;
 }
 
 input{
@@ -100,7 +115,6 @@ label{
 
 button{
     margin-left: 20%;
-    margin-top: 3%;
     padding: 8px 200px;
     border-radius: 10px;
     border: 1px solid #054802;
