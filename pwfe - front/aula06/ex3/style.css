@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Noto Sans";
+}
+
+body{
+    background-color: #d28574 ;
+}
+
+.item-menu:hover{
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+    transition: 0s;
+    /* border-radius: 50%; */
+    box-shadow: 0px 0px 10px  rgba(238, 112, 77, 1);
+}
+
+.item-menu{
+    width: 15vw;
+    height: 30vh;
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.39);
+    border-radius: 20px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between;  */
+    text-align: center;
+    margin: 15px;
+    padding: 15px 15px;
+    background-color: #fff;
+    color: #000;
+}
+
+.item-menu img{
+    width: 8vh;
+    height: 8vh;
+}
+
+.item-menu > button > img{
+    width: 50px;
+    height: 50px;
+}
+
+.modelo{
+    visibility: hidden;
+    display:none;
+}
+
+
+
+p, label, button{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+button{
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #d28574;
+    border: 1px solid #d28574;
+}
+
+button:hover{
+    background-color: #d28574;
+    color:#fff;
+    cursor:pointer;
+    border: 1px solid #d28574;
+}
+/* input{
+    border:none;
+    display: flex;
+    text-align: center;
+} */
+
+.menu{
+    margin-top: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* .color1 { #ec1e66 };
+.color2 { #f13c7e };
+.color3 { #f65b95 };
+.color4 { #fa79ad };
+.color5 { #ff97c4 }; */

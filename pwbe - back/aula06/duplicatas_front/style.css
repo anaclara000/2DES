@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Noto Sans";
+}
+
+body{
+    background-color: #d28574 ;
+}
+
+.container{
+    width: 13vw ;
+    height: 30vh ;
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.39);
+    border-radius: 20px;
+    text-align: center;
+    margin: 10px;
+    padding: 15px 15px;
+    background-color: #fff;
+    color: #000;
+
+}
+.container_mae {
+    margin-left: 10px;
+    margin-top: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+p, button{
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+button{
+    margin-top: 30px;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #d28574;
+    border: 1px solid #d28574;
+}
+
+button:hover{
+    background-color: #d28574;
+    color:#fff;
+    cursor:pointer;
+    border: 1px solid #d28574;
+}
+
+.form-modal{
+    width: 40vw;
+    background-color: #fff;
+    height: 10vh;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.infos > p{
+    padding: 0px 10px;
+    margin-right: -50px;;
+    width: 10vw;
+}
+
+
+.form-modal button{
+    border-radius: 3px;
+    font-size: 15px;
+    margin-right: 20%;
+    margin-left: -100px;
+}
+
+.model{
+    display: none;
+    visibility: hidden;
+}
+.container2{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+}
