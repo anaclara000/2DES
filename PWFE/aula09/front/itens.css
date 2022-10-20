@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: medium;
+}
+
+ header{
+    font-family: Arial;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #666;
+    width: 35vw;
+    height: 5vh;
+    justify-content: space-between;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+header button{
+    width: 200px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+header button:hover{
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+.card{
+    font-family: 'Poppins', sans-serif;
+    width : 60vw;
+    display: grid;
+    grid-template-columns: 65% 30% 5%;
+    align-items: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.288);
+    margin: 5px;
+    margin-bottom: 10px;
+    background-color: #F7F7F7;
+    
+}
+
+.card p{
+    margin: 20px;
+}
+
+#del{
+    background-color: #F7F7F7;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    color: red;
+}
+#del:hover{
+    background-color: red;
+    color: #F7F7F7;
+}
+
+#img{
+    width: 150px;
+}
+
+.model{
+    display : none;
+    visibility: hidden;
+}   
