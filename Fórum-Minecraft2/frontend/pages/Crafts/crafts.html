@@ -8,6 +8,7 @@
     <title>RENASCRAFT - CRAFTS</title>
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../Home/img/minecraft-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/crafts.css">
 </head>
 
@@ -24,7 +25,6 @@
                         <img class="img-menu" src="img/output-onlinepngtools.png" alt="">
                         <h1>RENASCRAFT</h1>
                         <li><a href="../Home/index.html"><i class='bx bxs-home'></i>HOME</a></li>
-                        <li><i class='bx bxs-user-account'></i>INTEGRANTES</li>
                         <li onclick="menuDow()">TÓPICOS<i class='bx bx-caret-down'></i>
                             <ul class="dropDown model">
                                 <li><a href="../Crafts/crafts.html"><i class='bx bxs-pin'></i>CRAFTS</a></li>
@@ -61,7 +61,15 @@
                 </div>
 
                 <div class="cont-pergunta">
-                    <button onclick="modalPergunta()">+NOVA PERGUNTA</button>
+                    <button id="btnPerg"onclick="modalPergunta()">+NOVA PERGUNTA</button>
+                </div>
+                <div class="modal-certo2 model">
+                    <div class="modal-upload">
+                        <img src="./img/enviando.gif" alt="">
+
+                        <p>Enviando pergunta...</p>
+                    </div>
+                  
                 </div>
 
                 <div class="cont-inf">

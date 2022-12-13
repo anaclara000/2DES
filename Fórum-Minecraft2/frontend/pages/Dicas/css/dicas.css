@@ -441,8 +441,16 @@ nav ul h1 {
 
 .cont-ver-mais-resposta p {
     font-size: 11pt;
+    cursor: pointer;
 }
 
+.cont-ver-mais-resposta >p:hover{
+    color: #1EB43C;
+}
+
+.i-enviar:hover{
+    color:rgba(0, 0, 0, 0.76)
+}
 .h-sec-01  {
     display: flex;
 }
@@ -588,6 +596,7 @@ nav ul h1 {
     text-align: end;
     margin-top: -23px;
     font-size: 20pt;
+    cursor: pointer;
 }
 
 .header-user-answer {
@@ -783,4 +792,58 @@ footer {
 
 .cont-ul > li > a > i{
     color: white;
+}
+
+.bx-edit{
+    cursor: pointer;
+}
+
+#btnPerg:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.usuario-resp{
+    color: white;
+    font-size: 18px;
+}
+
+.data-resp{
+    color: white;
+    font-size: 15px;
+}
+.answer-r{
+    margin-top: 2%;
+}
+
+.header-user-answer > img{
+    width: 3vw;
+}
+
+
+.modal-certo2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .modal-upload{
+    border-radius: 3%;
+    background-color: #fff;
+    justify-content: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.modal-upload > img{
+    width: 20vw;
+    border-radius: 3%;
 }

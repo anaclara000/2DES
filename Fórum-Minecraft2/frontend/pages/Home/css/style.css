@@ -424,6 +424,10 @@ nav ul h1 {
     cursor: pointer;
     color: black;
 }
+
+.i-enviar:hover{
+    color:rgba(0, 0, 0, 0.76)
+}
 .cont-input {
     width: 60%;
     display: flex;
@@ -445,6 +449,11 @@ nav ul h1 {
 
 .cont-ver-mais-resposta p {
     font-size: 11pt;
+    cursor: pointer;
+}
+
+.cont-ver-mais-resposta >p:hover{
+    color: #1EB43C;
 }
 
 .h-sec-01  {
@@ -571,9 +580,25 @@ nav ul h1 {
     
 }
 .answer-card img {
-    width: 13%;
+    width: 10%;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.answer-card{
+    background-color: #515153;
+    padding: 2%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+
+.nameUser{
+    font-size: 16px;
+}
+
+.dataResp{
+    font-size: 13px;
+
 }
 .header-user-answer {
     display: flex;
@@ -587,6 +612,7 @@ nav ul h1 {
 }
 
 .answer-r {
+    margin-top: 8px;
     color: white;
 }
 
@@ -783,7 +809,9 @@ a{
     width: 2vw;
     height: 2vh;
 }
-
+.btn-fechar{
+    cursor: pointer;
+}
 #container-users{
     display: flex;
     align-items: center;
@@ -804,4 +832,37 @@ a{
         display: none;
     }
     
+}
+.modal-certo2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .modal-upload{
+    border-radius: 3%;
+    background-color: #fff;
+    justify-content: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.modal-upload > img{
+    width: 20vw;
+    border-radius: 3%;
+}
+
+.title-resp{
+    font-size: 18px;
+}
+
+.bx-edit{
+    cursor: pointer;
 }

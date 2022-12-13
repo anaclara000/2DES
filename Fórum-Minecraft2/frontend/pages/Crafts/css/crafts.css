@@ -145,8 +145,11 @@ nav ul h1 {
     width: 100%;
     /* border-radius: 10px; */
 }
-
-
+#btnPerg:hover{
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
 .cont-inf {
     margin-top: 1px;
     padding-top: 10px;
@@ -774,4 +777,29 @@ footer {
 
 .cont-ul > li > a > i{
     color: white;
+}
+.modal-certo2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .modal-upload{
+    border-radius: 3%;
+    background-color: #fff;
+    justify-content: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.modal-upload > img{
+    width: 20vw;
+    border-radius: 3%;
 }

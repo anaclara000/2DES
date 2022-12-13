@@ -210,11 +210,11 @@ function cadastrarResposta(e) {
         })
             .then(resp => { return resp })
             .then(resp => {
-                alert("aaaaa!");
+                alert("Resposta enviada");
                 window.location.reload();
             })
     } else {
-        alert("erro")
+        alert("Insira uma resposta")
     }
 
 
@@ -262,9 +262,14 @@ function cadastrarPergunta(e) {
             })
                 .then(res => {
                     if (res.status == 201) {
-                        alert("Pergunta enviada")
-                        window.location.reload()
-
+                        fecharModalPergunta()
+                        var modalCerto = document.querySelector('.modal-certo2')
+                    modalCerto.classList.remove('model')
+                setTimeout(() => {
+                    esconderModalCheck()
+                    
+                    window.location.reload()
+                }, 5000)
                     }
                 })
 
@@ -275,6 +280,11 @@ function cadastrarPergunta(e) {
         alert('Insira a Sua Pergunta antes de enviar!')
     }
 
+}
+function esconderModalCheck() {
+    var modalCerto = document.querySelector('.modal-certo2')
+
+    modalCerto.classList.add('model')
 }
 
 function modalPergunta() {

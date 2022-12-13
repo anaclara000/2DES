@@ -37,6 +37,7 @@ function cad(e) {
     
     let Users = document.querySelector('.b').value
     let inptNome = document.querySelector("#nome").value;
+    let inptSobre = document.querySelector("#sobre").value;
     let inptNick = document.querySelector("#nick").value;
     let inptEmail = document.querySelector("#email").value;
     let inptSenha = document.querySelector("#senha").value;
@@ -63,8 +64,11 @@ function cad(e) {
     }else if(inptSenhaConfirm !== inptSenha){
         abrirModalSenha()
     }else if(UserDiferente == true || EmailDiferente == true) {
-        alert("Usuario ja existe")
+        localStorage.setItem("cad", JSON.stringify({"nome":inptNome, "sobrenome": inptSobre, "senha":inptSenha}));
+        alert("Usuario já existe")
         window.location.reload()
+        
+       
     }else{
         let options = JSON.stringify({
             "nome_user": inptNome,
@@ -87,7 +91,7 @@ function cad(e) {
                     modalCerto.classList.remove('model')
                 setTimeout(() => {
                     esconderModalCheck()
-                    // window.location.href = '../../Login/index.html'
+                    window.location.href = '../../Login/index.html'
                 }, 2200)
                 
                 }
@@ -95,11 +99,6 @@ function cad(e) {
     }
 
     }
-
-        
-
-
-    
 
 function esconderModalCheck() {
     var modalCerto = document.querySelector('.modal-certo')

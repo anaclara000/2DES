@@ -340,57 +340,68 @@ function fecharModalPergunta() {
 
 }
 
-function cadastrarPergunta() {
-
+function cadastrarPergunta(e) {
+    var txtPergunta = document.querySelector('#txtPerguntar').value
+    var idUser = document.querySelector(".id").innerHTML;
+    
     var hoje = new Date()
     var dia = String(hoje.getDate()).padStart(2, '0')
     var mes = String(hoje.getMonth() + 1).padStart(2, '0')
     var ano = hoje.getFullYear()
 
-    dataFinal = ano + '/' + mes + '/' + dia;
-
-    var txtPergunta = document.querySelector('#txtPerguntar').value
+    dataAtual = ano + '-' + mes + '-' + dia;
 
     if (txtPergunta.length > 0) {
         var select_status = document.querySelector(".select_status")
         let seleStatus = select_status.options[select_status.selectedIndex].value;
-        if (seleStatus == 'crafts') { var tema = 'CRAFTS' }
+        if (seleStatus == 'crafts') { var tema = 'CRAFT' }
         if (seleStatus == 'bugs') { var tema = 'BUGS' }
         if (seleStatus == 'dicas') { var tema = 'DICAS' }
         if (seleStatus == 'mods') { var tema = 'MODS' }
 
-        let data = {
-            "id_user": 2,
-            "tema": tema,
-            "pergunta": txtPergunta,
-            "data": dataFinal
+        if (txtPergunta !== "") {
+            let data = {
+                "id_user": idUser,
+                "tema": tema,
+                "pergunta": txtPergunta,
+                "data": dataAtual
 
-        }
-        console.log(data)
+            }
+            console.log(data)
 
-        fetch(uriQuestions, {
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "body": JSON.stringify(data)
-        })
-
-            .then(res => { return res.json() })
-            .then(resp => {
-                if (resp.id_user !== undefined && resp.tema !== undefined && resp.pergunta !== undefined && resp.data !== undefined) {
-                    alert('Deu Certo!')
-                }
+            fetch(uriQuestions, {
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": JSON.stringify(data)
             })
-    }
-    else {
+                .then(res => {
+                    if (res.status == 201) {
+                        fecharModalPergunta()
+                        var modalCerto = document.querySelector('.modal-certo2')
+                    modalCerto.classList.remove('model')
+                setTimeout(() => {
+                    esconderModalCheck()
+                    
+                    window.location.reload()
+                }, 5000)
+                    }
+                })
+
+        } else {
+            ('Insira a Sua Pergunta antes de enviar!')
+        }
+    } else {
         alert('Insira a Sua Pergunta antes de enviar!')
     }
 
+}
 
+function esconderModalCheck() {
+    var modalCerto = document.querySelector('.modal-certo2')
 
-
-
+    modalCerto.classList.add('model')
 }
 
 

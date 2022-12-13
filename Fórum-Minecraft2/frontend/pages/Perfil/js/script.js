@@ -94,7 +94,7 @@ function deleteUser(e) {
             setTimeout(() => {
                 ModalCreeper()
                 window.location.href = '../Home/index.html'
-            }, 4300)
+            }, 5000)
         })
 }
 function esconderModalCheck() {

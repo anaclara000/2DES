@@ -884,8 +884,6 @@ footer {
 
 
 .teste{
-    background-color: white;
-    border: 2px solid rgb(97, 202, 28);
     border-radius: 10%;
     position: absolute;
     top: 25%;
@@ -901,7 +899,8 @@ footer {
     color: white;
 }
 .teste > img{
-    width: 20vw;
+    width: 25vw;
+    border-radius: 2%;
 }
 .m{
     visibility: hidden;
@@ -999,12 +998,16 @@ footer {
 .modal-certo{
     position: fixed;
     top: 35%;
-    left: 35%;
-    border-radius: 10%;
-    background-color: transparent;
-    backdrop-filter: blur(100px);
+    left: 33%;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+
+.modal-certo > img{
+    border-radius: 2%;
+    width: 20vw;
+    height: 30vh;
 }
