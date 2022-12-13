@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #e6e6e6;
+}
+.cont-cadastra {
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    width: 75vw;
+    margin: 10% auto;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cont-inps{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    padding-left: 12%;
+}
+
+.cont-img-banner {
+    /* background-color: #96111138;
+    padding: 0px 6%; */
+    border-right: 3px solid rgba(0, 0, 0, 0.13);
+    padding-right: 5%;
+}
+
+.img-banner {
+    width: 25vw;    
+}
+
+.cad {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    margin-left: 15%;
+}
+
+
+.inps {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.inps div {
+    margin: 10px;
+}
+
+.inps input {
+    width: 15vw;
+    border: none;
+    background: none;
+    border-bottom:  1px solid black;
+}
+
+.btn-cadastrar {
+    display: flex;
+    justify-content: center;
+}
+button {
+    display: flex;
+    margin: 5% auto;
+    background-color: #09ac24;
+    border: none;
+    padding: 5px 0px;
+    color: white;
+    font-weight: 800;
+    border-radius: 15px;
+    font-size: 10pt;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    
+}
+
+.img-btn {
+    width: 15px;
+    margin: 2px 20px;    
+}
+
+.link-login {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.link-login:hover{
+    color:#64c708;
+}
+
+.single-input{
+    background-color: rgb(243, 242, 242);
+    position: relative;
+    
+}
+
+.single-input > label{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    color: rgb(150,150,150);
+    cursor: text;
+    transition: 0.5s ease-in-out;
+    font-size: 11pt;
+}
+
+.input{
+    height: 3vh;
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid rgb(200,200,200);
+    outline: 0;
+    font-size: 16px;
+    color: rgb(80,80,80);
+    transition: 0.5s ease-in-out;
+    
+}
+
+.input:focus,
+.input:valid{
+    border-bottom: 1px solid #2C1C36;
+}
+.input:focus ~ label,
+.input:valid ~ label{
+    transform: translateY(-14px);
+    font-size: 15px;
+    color: #2C1C36;
+}
+
+label {
+    font-size: 220px;
+}
+
+.model{
+    display: none;
+    visibility:hidden;
+}
+
+.modal-certo{
+    background-color:#77b43f;
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 25vw;
+    border-radius: 2%;
+}
+
+.modal-certo > p{
+    margin-top: 2%;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-cadastrar:hover{
+    background-color: #64c708;
+}
+
+.single-input > label {
+    margin-bottom: 10px;
+}
+
+.tela4, .tela5{
+    visibility: hidden;
+    display: none;
+}
+
+.confirm{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.288);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-confirm{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+.container-confirm > p{
+    font-size: 18px;
+}
+
+
+.btns > button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btns > .ok{
+    background-color: green;
+    color: white;
+}
+
+.btns > .ok:hover{
+    background-color: rgb(8, 185, 8);
+    color: white;
+}
+
+.btn-cadastrar-div{
+    margin-left: 13%;
+}
+
+.senhas > p{
+    color: red;
+}
