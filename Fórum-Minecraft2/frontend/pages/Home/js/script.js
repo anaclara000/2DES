@@ -1,6 +1,6 @@
 var uriQuestions = 'http://localhost:3000/Perguntas'
 var uriUsuarios = 'http://localhost:3000/Usuarios'
-
+var uriRespostas = 'http://localhost:3000/Respostas'
 
 var questions = []
 var questionsAnswer = []
@@ -105,81 +105,182 @@ function preencher() {
 }
 var cardRespostaHome = document.querySelector('.answer-card')
 // -------------- MODAL E CAD RESPOSTAS -----------------
+// function ativarModalResposta(e) {
+
+//     const corpo = e.parentNode.parentNode.querySelector(".corpo");
+
+//     corpo.classList.remove('tela')
+
+//     var btnVerMais = e.parentNode.querySelector('.cont-ver-mais-resposta')
+
+//     btnVerMais.classList.add('tela')
+
+//     var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
+//     fetch("http://localhost:3000/Feed")
+//         .then(resp => { return resp.json() })
+//         .then(data => {
+//             if (id_perg != null) {
+//                 const options = { method: 'GET' };
+//                 fetch('http://localhost:3000/Feed/' + id_perg, options)
+//                     .then(response => response.json())
+//                     .then(resp => {
+//                         resp.forEach(r => {
+//                             var modalResposta = cardRespostaHome.cloneNode(true);
+
+//                             console.log(modalResposta)
+
+//                             modalResposta.classList.remove('tela')
+//                             modalResposta.querySelector(".answer-r").innerHTML = r.resposta
+//                             modalResposta.querySelector(".nameUser").innerHTML = r.nickname
+
+//                             var data = r.dataResp
+//                             const [ano, mes, juncao] = data.split('-')
+//                             var dia = juncao[0] + juncao[1]
+//                             var dataCompleta = dia + '/' + mes + '/' + ano
+//                             modalResposta.querySelector(".dataResp").innerHTML = dataCompleta
+//                             var close = document.createElement('button')
+//                             close.classList.add("btnClose")
+//                             close.setAttribute('onClick', 'fecharModal()')
+
+//                             corpo.appendChild(modalResposta)
+//                             console.log(corpo)
+
+//                             // modalResposta.appendChild(close)
+
+//                         })
+
+//                     })
+
+//             }
+
+//             // modalResposta.setAttribute('onClick', 'exibirResp(this)')
+
+//             console.log(id_perg)
+//         })
+
+// }
+
+
 function ativarModalResposta(e) {
-
-    const corpo = e.parentNode.parentNode.querySelector(".corpo");
-
-    corpo.classList.remove('tela')
 
     var btnVerMais = e.parentNode.querySelector('.cont-ver-mais-resposta')
 
-    btnVerMais.classList.add('tela')
+    btnVerMais.classList.add('model')
 
-    var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
-    fetch("http://localhost:3000/Feed")
-        .then(resp => { return resp.json() })
-        .then(data => {
-            if (id_perg != null) {
-                const options = { method: 'GET' };
-                fetch('http://localhost:3000/Feed/' + id_perg, options)
-                    .then(response => response.json())
-                    .then(resp => {
-                        resp.forEach(r => {
-                            var modalResposta = cardRespostaHome.cloneNode(true);
+    var uriRespostas = 'http://localhost:3000/Feed'
 
-                            console.log(modalResposta)
+    const options = { method: 'GET' };
 
-                            modalResposta.classList.remove('tela')
-                            modalResposta.querySelector(".answer-r").innerHTML = r.resposta
-                            modalResposta.querySelector(".nameUser").innerHTML = r.nickname
+    fetch(uriRespostas, options)
+        .then(res => res.json(e))
+        .then(res => {
+            respostas = res;
+            modalRespostas(e);
+        }
+        )
+        .catch(err => console.error(err));
 
-                            var data = r.dataResp
-                            const [ano, mes, juncao] = data.split('-')
-                            var dia = juncao[0] + juncao[1]
-                            var dataCompleta = dia + '/' + mes + '/' + ano
-                            modalResposta.querySelector(".dataResp").innerHTML = dataCompleta
-                            var close = document.createElement('button')
-                            close.classList.add("btnClose")
-                            close.setAttribute('onClick', 'fecharModal()')
+  
 
-                            corpo.appendChild(modalResposta)
-                            console.log(corpo)
-
-                            // modalResposta.appendChild(close)
-
-                        })
-
-                    })
-
-            }
-
-            // modalResposta.setAttribute('onClick', 'exibirResp(this)')
-
-            console.log(id_perg)
-        })
 
 }
 
+function modalRespostas(e) {
+
+
+    var id_perg = e.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
+    var mResposta = e.parentNode.parentNode.querySelector('.user-answer')
+    
+    mResposta.classList.remove('model')
+    
+
+    respostas.forEach(r => {
+        
+        if (id_perg == r.id_pergunta) {
+            
+            var divAC = document.createElement('div')
+            divAC.classList.add('answer-card')
+
+            // PRIMEIRA DIV
+            var divHUA = document.createElement('div')
+            divHUA.classList.add('header-user-answer')
+
+            var imgResp = document.createElement('img')
+            imgResp.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/160745e3-9f8c-46b9-a326-cc9efff1e5aa/d7kxdcf-094a44e7-d459-47b6-8bf8-689a3a84d106.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MDc0NWUzLTlmOGMtNDZiOS1hMzI2LWNjOWVmZmYxZTVhYVwvZDdreGRjZi0wOTRhNDRlNy1kNDU5LTQ3YjYtOGJmOC02ODlhM2E4NGQxMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.l8kabRud63qyIqTQtuZ-7PjI9yOxibEgYdsK2zaUHgc'
+        
+            var divUAT = document.createElement('div')
+            divUAT.classList.add('user-answer-title')
+
+            // ******* FORMATANDO A DATA ***********
+            var data = r.dataResp
+
+            const [ano, mes, juncao] = data.split('-')
+
+            var dia = juncao[0] + juncao[1]
+
+            var dataCompleta = dia + '/' + mes + '/' + ano
+
+            //*********** FIM DA FORMATAÇÃO DA DATA *********** 
+
+            var hTitleResp = document.createElement('h5')
+            hTitleResp.classList.add('usuario-resp') 
+            hTitleResp.innerHTML = r.nickname 
+            
+            var spanDR = document.createElement('span')
+            spanDR.classList.add('data-resp')
+            spanDR.innerHTML = dataCompleta
+
+            divHUA.appendChild(imgResp)
+            divHUA.appendChild(divUAT)
+            divUAT.appendChild(hTitleResp)
+            divUAT.appendChild(spanDR)
+
+            //SEGUNDA DIV
+            var divCAR = document.createElement('div')
+            divCAR.classList.add('cont-answer-r')
+
+            var pAR = document.createElement('p')
+            pAR.classList.add('answer-r')
+            pAR.innerHTML = r.resposta
+
+            divCAR.appendChild(pAR)
+            divAC.appendChild(divHUA)
+            divAC.appendChild(divCAR)
+
+            console.log(divAC)
+            
+            mResposta.appendChild(divAC)
+        }
+
+    })
+
+    
+
+}
+
+
 function fechandoModal(e) {
     
-    var btnVerMais = e.parentNode.parentNode.querySelector('.cont-ver-mais-resposta')
+    var btnVerMais = e.parentNode.parentNode.parentNode.querySelector('.cont-ver-mais-resposta')
     
-    btnVerMais.classList.remove('tela') 
+    btnVerMais.classList.remove('model') 
     console.log(btnVerMais)
     
     for(let i = 1; i > 0; i++) {
-        var mResposta = e.parentNode.parentNode.querySelector('.corpo')
+        var mResposta = e.parentNode.parentNode.querySelector('.user-answer')
         var secResp = document.querySelector('.answer-card')
         
-        mResposta.classList.add('tela')
-        
-        mResposta.remove(secResp)
+        mResposta.classList.add('model')
+        mResposta.removeChild(secResp)
+
     }
 
 
 
         
 }
+
+
 
 function cadastrarResposta(e) {
     var hoje = new Date()
@@ -367,8 +468,8 @@ function cardsPerguntas() {
 
 
 }
-
 function ativarFetchesPerguntas() {
+
 
     const options = { method: 'GET' };
 
@@ -390,7 +491,20 @@ function ativarFetchesPerguntas() {
         )
         .catch(err => console.error(err));
 
+    fetch(uriRespostas, options)
+        .then(res => res.json())
+        .then(res => {
+            respostas = res;
+            cardsPerguntas();
+        }
+        )
+        .catch(err => console.error(err));
+
 }
+var qtdRep = 0
+
+
+
 
 
 // FAZENDO O MENU DROPDOWN 

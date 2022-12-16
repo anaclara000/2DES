@@ -355,7 +355,7 @@ function cadastrarPergunta() {
     if (txtPergunta.length > 0) {
         var select_status = document.querySelector(".select_status")
         let seleStatus = select_status.options[select_status.selectedIndex].value;
-        if (seleStatus == 'crafts') { var tema = 'CRAFT' }
+        if (seleStatus == 'crafts') { var tema = 'CRAFTS' }
         if (seleStatus == 'bugs') { var tema = 'BUGS' }
         if (seleStatus == 'dicas') { var tema = 'DICAS' }
         if (seleStatus == 'mods') { var tema = 'MODS' }

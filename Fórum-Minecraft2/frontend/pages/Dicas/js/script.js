@@ -199,9 +199,7 @@ function cardsPerguntas() {
 
 }
 
-function filtrandoUltimas() {
 
-}
 
 function ativarModalResposta(e) {
 
@@ -321,6 +319,13 @@ function fechandoModal(e) {
         
 }
 
+
+
+
+
+
+
+
 function modalPergunta() {
     var modalQuestion = document.querySelector('.modal-pergunta')
     var texto = document.querySelector('#txtPerguntar')
@@ -364,7 +369,7 @@ function cadastrarPergunta(e) {
     if (txtPergunta.length > 0) {
         var select_status = document.querySelector(".select_status")
         let seleStatus = select_status.options[select_status.selectedIndex].value;
-        if (seleStatus == 'crafts') { var tema = 'CRAFT' }
+        if (seleStatus == 'crafts') { var tema = 'CRAFTS' }
         if (seleStatus == 'bugs') { var tema = 'BUGS' }
         if (seleStatus == 'dicas') { var tema = 'DICAS' }
         if (seleStatus == 'mods') { var tema = 'MODS' }
@@ -435,48 +440,51 @@ function favoritar(e) {
     favoritarVazio.classList.toggle('model')
     favoritarCheio.classList.toggle('model')
 }
-// function cadastrarResposta(e) {
-//     var hoje = new Date()
-//     var dia = String(hoje.getDate()).padStart(2, '0')
-//     var mes = String(hoje.getMonth() + 1).padStart(2, '0')
-//     var ano = hoje.getFullYear()
+function cadastrarResposta(e) {
+    var hoje = new Date()
+    var dia = String(hoje.getDate()).padStart(2, '0')
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0')
+    var ano = hoje.getFullYear()
 
-//     dataAtual = ano + '-' + mes + '-' + dia;
-
-//     var id_pergunta = e.parentNode.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
-//     var inptResp = e.parentNode.querySelector(".inpResp").value;
-//     var iduser = document.querySelector(".id").innerHTML;
-//     console.log(inptResp)
-//     if (inptResp != '') {
-//         let options = JSON.stringify({
-//             "id_usuario": iduser,
-//             "id_perg": id_pergunta,
-//             "resposta": inptResp,
-//             "dataResp": dataAtual
-//         })
-
-//         fetch("http://localhost:3000/Respostas", {
-//             "method": "POST",
-//             "headers": {
-//                 "Content-Type": "application/json"
-//             },
-//             "body": options
-//         })
-//             .then(resp => { return resp })
-//             .then(resp => {
-//                 alert("Resposta enviada");
-//                 window.location.reload();
-//             })
-//     } else {
-//         alert("Insira uma resposta")
-//     }
+    dataAtual = ano + '-' + mes + '-' + dia;
+    var id_pergunta = e.parentNode.parentNode.parentNode.querySelector('.id_pergunta').innerHTML
+    var inptResp = e.parentNode.querySelector(".inpResp").value;
+    var iduser = document.querySelector(".id").innerHTML;
+    console.log(inptResp)
 
 
+    if (inptResp != '') {
+        let options = JSON.stringify({
+            "id_usuario": iduser,
+            "id_perg": id_pergunta,
+            "resposta": inptResp,
+            "dataResp": dataAtual
+        })
+
+        fetch("http://localhost:3000/Respostas", {
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": options
+        })
+            .then(resp => { return resp })
+            .then(resp => {
+                alert("Resposta enviada");
+                window.location.reload();
+            })
+    } else {
+        alert("Insira uma resposta")
+    }
 
 
-// }
 
-//FILTRANDO
+
+}
+
+
+
+
 var search_btn = document.querySelector('.btn-filter')
 const INPUT_BUSCA = document.querySelector('.inpFiltrar')
 const PERGUNTAS = document.querySelector('.container-cards')
